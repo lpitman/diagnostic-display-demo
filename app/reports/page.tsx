@@ -1,5 +1,4 @@
 import { getDiagnosticReport } from "../utils/fetch-report";
-import DiagnosticReport from "../components/DiagnosticReport";
 import Link from 'next/link';
 import CollapsibleReportItem from "../components/CollapsibleReportItem";
 

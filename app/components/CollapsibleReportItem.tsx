@@ -23,7 +23,8 @@ const CollapsibleReportItem = ({ report }: CollapsibleReportItemProps) => {
             >
                 <div>
                     <h3 className='font-bold text-lg text-gray-800'>{report.reportName}</h3>
-                    <p className='text-sm text-gray-500'>{report.effectiveDateTime}</p>    
+                    <p className='text-sm text-gray-800'>Test Performer: {report.testPerformer}</p>
+                    <p className='text-sm text-gray-500'>Result Date and Time: {report.effectiveDateTime}</p>    
                 </div>    
                 <svg
                     className={`w-6 h-6 text-gray-500 transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
