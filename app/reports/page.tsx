@@ -14,7 +14,7 @@ export default async function Home() {
     ]
 
     return (
-      <main className='bg-gray-50 min-h-screen py-12'>
+      <main className='bg-gradient-to-br from-gray-100 to-blue-200 min-h-screen py-12'>
         {/* <DiagnosticReport report={report} /> */}
         <div className='max-w-4xl mx-auto px-4'>
             <Link href='/' className='text-blue-600 hover:underline mb-6 inline-block'>&larr; Back to Home</Link>
