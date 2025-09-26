@@ -73,6 +73,9 @@ The project uses the Next.js App Router, which organizes the application by rout
         * `CollapsibleReportItem.tsx`: An interactive client component for a single report accordion.
         * `ObservationItem.tsx`: A simple component to display a single observation/vital.
     * `app/types/`: Contains all our interfaces for this project.
+    * `app/utils`: Contains the utilities for fetching and parsing the data.
+        * `app/utils/fetch-report.ts`: Simple function to grab the data from the source.
+        * `app/utils/parse-report.ts`: Where `fhir-models` is used to parse the incoming data.  
 * `public/`: Static assets like images and fonts.
 
 ---
