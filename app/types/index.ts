@@ -7,7 +7,7 @@ export interface ObservationDetail {
   value: string;
   normalRange: string;
   valueQuantity: number | undefined;
-  low: number | undefined;
+  low: number | 0;
   high: number | undefined;
 }
 

@@ -54,8 +54,8 @@ export function parseDiagnosticReport(rawData: any): FormattedReport {
       : `N/A`;
     
     const range = obs.referenceRange?.[0];
-    const normalRange = (range && range.low && range.high) 
-      ? `${range.low.value} - ${range.high.value} ${range.high.unit}`
+    const normalRange = (range && range.high) 
+      ? `${range?.low?.value || 0} - ${range.high.value} ${range.high.unit}`
       : `N/A`;
       
     return {
@@ -64,7 +64,7 @@ export function parseDiagnosticReport(rawData: any): FormattedReport {
       value: value,
       normalRange: normalRange,
       valueQuantity: obs.valueQuantity?.value,
-      low: range?.low?.value,
+      low: range?.low?.value || 0,
       high: range?.high?.value,
     }
   }).filter((o): o is ObservationDetail => o !== null) ?? [];
