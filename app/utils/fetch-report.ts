@@ -1,4 +1,5 @@
-import { parseDiagnosticReport, FormattedReport } from "./parse-report";
+import { parseDiagnosticReport } from "./parse-report";
+import { FormattedReport } from "../types";
 
 // Fetch the DiagnosticReport from the provided url
 export async function getDiagnosticReport(): Promise<FormattedReport>{

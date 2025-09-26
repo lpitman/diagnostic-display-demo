@@ -6,26 +6,9 @@ import {
   jsonToObject
 } from 'fhir-models';
 
+import { ObservationDetail, FormattedReport, ExtendedObservation } from '../types';
 
-// Declaring interfaces for FHIR data
-interface ObservationDetail {
-  id: string;
-  name: string;
-  value: string;
-  normalRange: string;
-}
 
-export interface FormattedReport {
-  reportName: string;
-  testPerformer: string;
-  effectiveDateTime: string;
-  observations: ObservationDetail[];
-}
-
-interface ExtendedObservation extends Observation {
-  valueQuantity?: Quantity;
-  referenceRange?: ObservationReferenceRange[];
-}
 
 export function parseDiagnosticReport(rawData: any): FormattedReport {
   // parsing the DiagnosticReport from the Bundle
