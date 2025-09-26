@@ -1,22 +1,31 @@
 import { getDiagnosticReport } from "../utils/fetch-report";
 import DiagnosticReport from "../components/DiagnosticReport";
+import Link from 'next/link';
+import CollapsibleReportItem from "../components/CollapsibleReportItem";
 
 export default async function Home() {
   try {
     const report = await getDiagnosticReport();
 
+    // simulating having multiple reports
+    const reports = [
+        {...report, reportName: 'Complete Blood Count (1)'},
+        {...report, reportName: 'Complete Blood Count (2)'},
+        {...report, reportName: 'Complete Blood Count (3)'},
+    ]
+
     return (
-      // <main className='container mx-auto p-8 font-sans'>
-      //   <h1 className='text-3xl font-bold mb-4'>Diagnostic Report Data</h1>
-      //   <p className='mb-6'>
-      //     Displaying your report:
-      //   </p>
-      //   <pre className='bg-gray-100 p-4 rounded-lg overflow-x-auto'>
-      //     <code className='text-gray-800'>{JSON.stringify(report, null, 2)}</code>
-      //   </pre>
-      // </main>
-      <main className="bg-gray-50 min-h-screen">
-        <DiagnosticReport report={report} />
+      <main className='bg-gray-50 min-h-screen py-12'>
+        {/* <DiagnosticReport report={report} /> */}
+        <div className='max-w-4xl mx-auto px-4'>
+            <Link href='/' className='text-blue-600 hover:underline mb-6 inline-block'>&larr; Back to Home</Link>
+            <h1 className="text-3xl font-bold text-gray-800 mb-6">Diagnostic Reports</h1>
+            <div className="space-y-4">
+                {reports.map((report, index) => (
+                    <CollapsibleReportItem key={index} report={report} />
+                ))}
+            </div>
+        </div>
       </main>
     );
   } catch(error) {
