@@ -52,7 +52,7 @@ const CollapsibleReportItem = ({ report }: CollapsibleReportItemProps) => {
                             It is not uncommon for results to be out of range.
                         </span>
                     </div>
-                    <div className='grid grid-cols-3 gap-4 pb-2 border-b-2 border-gray-300 mb-2 font-bold text-gray-600'>
+                    <div className='grid grid-cols-3 gap-4 pb-2 mb-2 font-bold text-gray-600'>
                         <div className="text-left">Test</div>
                         <div className="text-center">Result</div>
                         <div className="text-right">Reference Range</div>

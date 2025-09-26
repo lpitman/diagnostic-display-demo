@@ -6,6 +6,9 @@ export interface ObservationDetail {
   name: string;
   value: string;
   normalRange: string;
+  valueQuantity: number | undefined;
+  low: number | undefined;
+  high: number | undefined;
 }
 
 export interface FormattedReport {

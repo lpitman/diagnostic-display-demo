@@ -53,7 +53,7 @@ export function parseDiagnosticReport(rawData: any): FormattedReport {
       ? `${obs.valueQuantity.value} ${obs.valueQuantity.unit}` 
       : `N/A`;
     
-      const range = obs.referenceRange?.[0];
+    const range = obs.referenceRange?.[0];
     const normalRange = (range && range.low && range.high) 
       ? `${range.low.value} - ${range.high.value} ${range.high.unit}`
       : `N/A`;
@@ -62,7 +62,10 @@ export function parseDiagnosticReport(rawData: any): FormattedReport {
       id: obs.id || obsId,
       name: obs.code?.text || 'Unknown Vital',
       value: value,
-      normalRange: normalRange
+      normalRange: normalRange,
+      valueQuantity: obs.valueQuantity?.value,
+      low: range?.low?.value,
+      high: range?.high?.value,
     }
   }).filter((o): o is ObservationDetail => o !== null) ?? [];
 
