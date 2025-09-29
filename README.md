@@ -88,6 +88,7 @@ During the development process, the following assumptions were made:
 2.  **Multiple Reports**: To demonstrate handling a list of reports, the single report fetched from the API was duplicated three times to simulate a real-world scenario where a patient might have multiple reports.
 3.  **Data Consistency**: It is assumed that every `DiagnosticReport` will contain valid references to `Observation` resources that are also present within the same FHIR Bundle.
 4.  **UI/UX**: The user interface was designed to be clean and intuitive, building upon the provided example by adding interactivity (accordion) for a better user experience.
+5.  **Reference Ranges**: The reference range for Basophils is lacking a low range. It is assumed that is because the low limit is 0. Therefore, the ObservationDetail interface will default with a low of 0 if none is provided in the data.  
 
 ## Special Thanks
 To my spouse the med lab tech for suggesting that I add the "It is not uncommon for results to be out of range." note to the reports.
