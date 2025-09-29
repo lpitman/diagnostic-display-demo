@@ -21,8 +21,8 @@ const RangeIndicator = ({ value, low, high }: RangeIndicatorProps) => {
                     </div>
                 </div>
                 <div className="flex justify-between text-xs pb-3 text-gray-500 mt-1">
-                    <span>Lo ({low})</span>
-                    <span>High ({high})</span>
+                    <span data-testid='low-label' >Lo ({ low })</span>
+                    <span data-testid='high-label' >High ({ high })</span>
                 </div>
             </div>
         </div>
