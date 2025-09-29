@@ -22,6 +22,7 @@ This is a web application built for a technical assessment. It displays FHIR R4 
 * **Language**: [TypeScript](https://www.typescriptlang.org/)
 * **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 * **FHIR Parsing**: [fhir-models](https://www.npmjs.com/package/fhir-models)
+* **Unit Tests**: [Jest](https://www.npmjs.com/package/jest)
 
 ---
 
@@ -60,6 +61,12 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
+Run unit tests with:
+
+```bash
+npm test
+```
+
 ---
 
 ## Project Structure
@@ -75,8 +82,10 @@ The project uses the Next.js App Router, which organizes the application by rout
     * `app/types/`: Contains all our interfaces for this project.
     * `app/utils`: Contains the utilities for fetching and parsing the data.
         * `app/utils/fetch-report.ts`: Simple function to grab the data from the source.
-        * `app/utils/parse-report.ts`: Where `fhir-models` is used to parse the incoming data.  
+        * `app/utils/parse-report.ts`: Where `fhir-models` is used to parse the incoming data.
+        * `app/utils/utils.text.ts`: Unit tests for the utils functions. 
 * `public/`: Static assets like images and fonts.
+* `__mocks__`: Mock data for the unit tests.
 
 ---
 

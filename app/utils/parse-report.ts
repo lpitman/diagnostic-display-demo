@@ -18,7 +18,7 @@ export function parseDiagnosticReport(rawData: any): FormattedReport {
 
   const parsedDiagnosticReport = jsonToObject(DiagnosticReport, diagnosticReportJson);
 
-  if (parsedDiagnosticReport instanceof Error) {
+  if (!parsedDiagnosticReport || parsedDiagnosticReport instanceof Error) {
     throw new Error(`Failed to parse DiagnosticReport`);
   }
 
