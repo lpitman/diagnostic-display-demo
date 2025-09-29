@@ -79,6 +79,7 @@ The project uses the Next.js App Router, which organizes the application by rout
     * `app/components/`: Contains all the reusable React components.
         * `CollapsibleReportItem.tsx`: An interactive client component for a single report accordion.
         * `ObservationItem.tsx`: A simple component to display a single observation/vital.
+        * `app/components/tests/*text.tsx`: Tests for component rendering.
     * `app/types/`: Contains all our interfaces for this project.
     * `app/utils`: Contains the utilities for fetching and parsing the data.
         * `app/utils/fetch-report.ts`: Simple function to grab the data from the source.
